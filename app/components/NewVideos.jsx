@@ -4,7 +4,7 @@ var NewVideos = React.createClass({
   render: function(){
     let iframe = this.props.url.map( (obj, index) => {
       let url = obj
-      return  <iframe key={index} src={url} frameBorder="0" allowFullScreen />
+      return  <iframe key={index} src={url} width='560' frameBorder="0" allowFullScreen />
     })
     return(
       <div>

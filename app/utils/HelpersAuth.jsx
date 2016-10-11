@@ -51,7 +51,7 @@ const HelpersAuth = {
   return $.ajax({
     type: 'get',
     dataType: 'json',
-    url: 'https://api.vimeo.com/categories/' + category + '/videos?per_page=3',
+    url: 'https://api.vimeo.com/categories/' + category + '/videos',
     headers: {
       "Authorization" : "Bearer " + accessToken
      },
@@ -76,3 +76,5 @@ export default HelpersAuth;
 //     client_id=CLIENT_ID&
 //     client_secret=CLIENT_SECRET
 // https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/76979871
+
+//'/videos?per_page=3'
