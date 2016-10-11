@@ -1,20 +1,15 @@
 import axios from 'axios';
 
- /// acces token
- '3a1693faf195d9fd695cfb3323488d3d'
-module.exports = {
-  baseURLAuth : 'https://api.vimeo.com/oauth/authorize',
+const accessToken = localStorage.accessToken;
 
+const axiosConfig = axios.create({
+  headers: {"Authorization" : "Bearer " + accessToken}
+});
 
+const ajaxHelpers = {
+  getMusicTwo: function(){
+    return axiosConfig('https://api.vimeo.com/categories/Sports/videos?per_page=3')
+  }
 }
 
-
-
-
-// {
-//     "path": "https://api.vimeo.com/oauth/authorize",
-//     "methods": [
-//         "POST",
-//         "OPTIONS"
-//     ]
-// },
+export default ajaxHelpers;

@@ -7,35 +7,33 @@ import DisplayVideo from 'DisplayVideo';
 var Video = React.createClass({
   getInitialState: function(){
     return {
-      isLoading: false,
-      videoRes: undefined
+      isLoading: false
     }
   },
-
-  handleSearch: function(){
+  handleSearch: function(category){
     var that = this;
     this.setState({
-      isLoading: true,
-      category: undefined
+      isLoading: true
     })
-    HelpersAuth.getVideo().then(function(response){
-      // console.log("this is response ", response);
+    HelpersAuth.getVideo(category).then(function(response){
       var videos = response.data;  // array
-      // console.log("this is what videos looks like", videos);
       that.setState({
         videos: videos,
-        isLoading: false
-      })
+        isLoading: false,
+        category: category
+      });
     })
   },
-
+  handleCategoryChoice: function(e){
+    e.preventDefault();
+    this.setState({value: event.target.value});
+    console.log("VALUE", value);
+  },
   componentDidMount: function(){
     HelpersAuth.checkForToken();
   },
-
   render: function (){
     var {videos, isLoading, description} = this.state;
-
     function renderVideos(){
       if (isLoading) {
         return <h3>Fetching Videos...</h3>

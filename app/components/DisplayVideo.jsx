@@ -1,9 +1,11 @@
 import React from 'react';
 import NewVideos from 'NewVideos';
 
-
-
 const DisplayVideo = React.createClass({
+  componentDidMount: function(){
+    console.log("What does videos look like", this.props.videos);
+  },
+
   render: function(){
     const Styles = {
       width: '50%',
