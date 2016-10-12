@@ -13,15 +13,12 @@ var Nav = React.createClass({
       <div className='top-bar'>
         <div className='top-bar-left'>
           <ul className='menu'>
-            <li className='menu-text'>Vimeo</li>
+            <li className='menu-text'><i className="fa fa-vimeo-square" aria-hidden="true"></i></li>
             <li>
-              <IndexLink to='/' activeClassName='active' activeStyle={{fontWeight:'bold'}}>Get videos</IndexLink>
+              <IndexLink to='/' activeClassName='active' activeStyle={{fontWeight:'bold'}}>Vimeo Randomizer</IndexLink>
             </li>
             <li>
               <Link to='/about' activeClassName='active' activeStyle={{fontWeight:'bold'}}>About</Link>
-            </li>
-            <li>
-              <Link to='/examples' activeClassName='active' activeStyle={{fontWeight:'bold'}}>Examples</Link>
             </li>
           </ul>
         </div>

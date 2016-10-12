@@ -3,27 +3,6 @@ import axios from 'axios';
 import Keys from 'Keys';
 
 const HelpersAuth = {
-
-  getAccessToken: function(){
-    if (!localStorage.accessToken || localStorage.expireTime < Date()) {
-      window.location = "https://accounts.spotify.com/authorize?client_id=" + KEYS.CLIENT_ID + "&redirect_uri=" + KEYS.REDIRECT_URI + "&scope=" +  encodeURIComponent(SCOPES) + "&response_type=token&state=123";
-    } else {
-      console.log("got access token from local storage");
-      // return localStorage.accessToken;
-    }
-  },
-
-  // checking for token now
-  getParameter: function(name,url){
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&#]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-    //http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
-  },
   checkForToken: function(){
     if (!localStorage.accessToken) {
       $.ajax({
@@ -51,7 +30,7 @@ const HelpersAuth = {
   return $.ajax({
     type: 'get',
     dataType: 'json',
-    url: 'https://api.vimeo.com/categories/' + category + '/videos',
+    url: 'https://api.vimeo.com/categories/' + category + '/videos?per_page=50',
     headers: {
       "Authorization" : "Bearer " + accessToken
      },

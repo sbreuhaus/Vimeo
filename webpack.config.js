@@ -32,7 +32,9 @@ module.exports = {
       HelpersAuth: 'app/utils/HelpersAuth.jsx',
       DisplayVideo: 'app/components/DisplayVideo',
       NewVideos: 'app/components/NewVideos',
-      Styles: 'app/styles/Styles.js'
+      Styles: 'app/styles/Styles.js',
+      applicationStyles: 'app/styles/app.css',
+      About: 'app/components/About.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },

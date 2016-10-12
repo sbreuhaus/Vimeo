@@ -7,9 +7,7 @@ const DisplayVideo = React.createClass({
   },
 
   render: function(){
-    const Styles = {
-      width: '50%',
-    }
+
     let url = this.props.videos.map( (video, index) => {
         let link = video.uri;
         link = link.slice(8, 17);
@@ -18,7 +16,6 @@ const DisplayVideo = React.createClass({
     })
     return(
       <div>
-        <h3 className="title-box">DisplayVideo</h3>
         <div >
           <ul>
             <NewVideos url={url}/>

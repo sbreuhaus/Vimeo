@@ -54,8 +54,15 @@ var Video = React.createClass({
   render: function (){
     var {videos, isLoading, description} = this.state;
     function renderVideos(){
+      let barProgress = {
+        width: '75%'
+      };
       if (isLoading) {
-        return <h3>Fetching Videos...</h3>
+        return  <div className="success progress" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuetext="Loading..." aria-valuemax="100">
+                  <span className="progress-meter" style={barProgress}>
+                    <p className="progress-meter-text">Loading...</p>
+                  </span>
+                </div>
       } else if (videos){
         return (
           <div>
