@@ -25,7 +25,6 @@ const HelpersAuth = {
     }
   },
   getVideo: function(category){
-  console.log("What is category", category);
   const accessToken = localStorage.accessToken;
   return $.ajax({
     type: 'get',
@@ -35,7 +34,6 @@ const HelpersAuth = {
       "Authorization" : "Bearer " + accessToken
      },
   }).done(function(response){
-    console.log("should Be some videos", response);
     return response;
   }).fail(function(response){
     console.log("it failed");
