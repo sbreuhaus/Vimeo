@@ -6,8 +6,7 @@ var About = (props) => {
   return(
     <div>
       <h1 className='text-center page-title'>About</h1>
-      <p>This is simple app built on Node, React, and Foundation.  It Utilizes Vimeo to retrieve videos from a
-      category specified by the user</p>
+      <p>This is simple app built on Node, React, and Foundation. The AJAX request sends back an array of 50 videos which are then shuffled to return 3 random videos which are displayed.</p>
       <ul>
         <li>
           <a href='https://github.com/sbreuhaus/Vimeo'>Github!</a>
