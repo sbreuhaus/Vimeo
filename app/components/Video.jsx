@@ -1,6 +1,5 @@
 import React from 'react';
 import VideoForm from 'VideoForm';
-import ajaxHelpers from 'ajaxHelpers';
 import HelpersAuth from 'HelpersAuth';
 import DisplayVideo from 'DisplayVideo';
 

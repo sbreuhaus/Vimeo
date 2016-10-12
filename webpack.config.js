@@ -26,8 +26,6 @@ module.exports = {
       Nav: 'app/components/Nav.jsx',
       Video: 'app/components/Video.jsx',
       VideoForm: 'app/components/VideoForm.jsx',
-      ajaxHelpers: 'app/utils/ajaxHelpers.jsx',
-      ajaxHelpersAuth: 'app/utils/ajaxHelpersAuth.jsx',
       Keys: 'app/utils/Keys.js',
       HelpersAuth: 'app/utils/HelpersAuth.jsx',
       DisplayVideo: 'app/components/DisplayVideo',
