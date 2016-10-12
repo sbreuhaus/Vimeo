@@ -46,14 +46,3 @@ const HelpersAuth = {
 };
 
 export default HelpersAuth;
-
-
-// curl -X POST https://api.vimeo.com/oauth/authorize/client
-//     grant_type=client_credentials&
-//     code=AUTH_CODE_HERE&
-//     redirect_uri=REDIRECT_URI&
-//     client_id=CLIENT_ID&
-//     client_secret=CLIENT_SECRET
-// https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/76979871
-
-//'/videos?per_page=3'
