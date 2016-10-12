@@ -8,7 +8,6 @@ var VideoForm = React.createClass({
     }
   },
   handleChange: function(e){
-    console.log("HANDLE");
     this.setState({
       dropDownSelection: e.target.value
     });
@@ -16,11 +15,7 @@ var VideoForm = React.createClass({
   onFormSubmit: function(e){
     e.preventDefault();
     let category = this.state.dropDownSelection;
-    console.log("CATEGORY", category);
     this.props.onSearch(category);
-  },
-  componentDidMount: function(){
-    console.log("Form mounted");
   },
   render: function(){
     return(

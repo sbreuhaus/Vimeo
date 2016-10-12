@@ -12,14 +12,11 @@ var Video = React.createClass({
   shuffle: function (array) {  // Stack-O
   var currentIndex = array.length, temporaryValue, randomIndex;
 
-  // While there remain elements to shuffle...
   while (0 !== currentIndex) {
 
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
 
-    // And swap it with the current element.
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
@@ -45,7 +42,6 @@ var Video = React.createClass({
   handleCategoryChoice: function(e){
     e.preventDefault();
     this.setState({value: event.target.value});
-    console.log("VALUE", value);
   },
   componentDidMount: function(){
     HelpersAuth.checkForToken();

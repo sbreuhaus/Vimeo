@@ -8,7 +8,7 @@ import About from 'About';
 require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();  //loads foundation
 
-require('style!css!applicationStyles')
+require('style!css!applicationStyles') //loads custom css
 
 ReactDOM.render(
   <Router history={hashHistory}>
