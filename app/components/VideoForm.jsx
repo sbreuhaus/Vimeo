@@ -20,7 +20,7 @@ var VideoForm = React.createClass({
   render: function(){
     return(
       <div>
-        <h1 className="page-title center" >Select a Category</h1>
+        <h1 className="page-title center" >Select a category & waste some time.....</h1>
         <form onSubmit={this.onFormSubmit}>
           <select onChange={this.handleChange}>
             <option selected="selected" hidden>Choose a video category</option>
@@ -29,7 +29,7 @@ var VideoForm = React.createClass({
             <option value="comedy">Comedy</option>
             <option value="food">Food</option>
           </select>
-          <button className="expanded hollow button">Get Videos</button>
+          <button className="expanded hollow button">Get Videos!</button>
         </form>
       </div>
     )

@@ -9,6 +9,9 @@ var Video = React.createClass({
       isLoading: false
     }
   },
+  componentDidMount: function(){
+    HelpersAuth.checkForToken();
+  },
   shuffle: function (array) {  // Stack-O
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -31,23 +34,18 @@ var Video = React.createClass({
     HelpersAuth.getVideo(category).then(function(response){
       let filterVids = response.data;
       filterVids = that.shuffle(filterVids);
-      var videos = filterVids.slice(0, 3);
+      let videos = filterVids.slice(0, 3);
+      filterVids.splice(0, 3);
       that.setState({
         videos: videos,
         isLoading: false,
-        category: category
+        category: category,
+        filterVids: filterVids
       });
     })
   },
-  handleCategoryChoice: function(e){
-    e.preventDefault();
-    this.setState({value: event.target.value});
-  },
-  componentDidMount: function(){
-    HelpersAuth.checkForToken();
-  },
   render: function (){
-    var {videos, isLoading, description} = this.state;
+    var {videos, isLoading, description, filterVids, category} = this.state;
     function renderVideos(){
       let barProgress = {
         width: '75%'
@@ -61,7 +59,10 @@ var Video = React.createClass({
       } else if (videos){
         return (
           <div>
-            <DisplayVideo videos={videos}/>
+            <DisplayVideo
+              videos={videos}
+              filterVids={filterVids}
+              category={category}/>
           </div>
         )
       }
