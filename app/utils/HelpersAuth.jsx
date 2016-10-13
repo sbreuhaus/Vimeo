@@ -36,6 +36,7 @@ const HelpersAuth = {
   }).done(function(response){
     return response;
   }).fail(function(response){
+    alert("There seems to me something wrong with Vimeo at the moment.  Try again later")
     console.log("it failed");
     console.log(response);
   });
